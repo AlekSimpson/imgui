@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     exe
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003890, symSize: 0x32C }
+  - { offsetInCU: 0x6E7, offset: 0x6E7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003890, symSize: 0x32C }
+  - { offsetInCU: 0x7B4, offset: 0x7B4, size: 0x8, addend: 0x0, symName: _createColor, symObjAddr: 0x32C, symBinAddr: 0x100003BBC, symSize: 0x98 }
+  - { offsetInCU: 0x806, offset: 0x806, size: 0x8, addend: 0x0, symName: _getCurrent, symObjAddr: 0x3C4, symBinAddr: 0x100003C54, symSize: 0xAC }
+  - { offsetInCU: 0x83C, offset: 0x83C, size: 0x8, addend: 0x0, symName: _handleKeyInput, symObjAddr: 0x470, symBinAddr: 0x100003D00, symSize: 0x38 }
+  - { offsetInCU: 0x86E, offset: 0x86E, size: 0x8, addend: 0x0, symName: _getColorValues, symObjAddr: 0x4A8, symBinAddr: 0x100003D38, symSize: 0x16C }
+  - { offsetInCU: 0x8A6, offset: 0x8A6, size: 0x8, addend: 0x0, symName: _toggleColor, symObjAddr: 0x614, symBinAddr: 0x100003EA4, symSize: 0x74 }
+...
