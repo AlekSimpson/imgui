@@ -12,7 +12,7 @@ typedef struct {
   bool pressed;
 } button_t;
 
-button_t button(int, int, int, int, int, int, int);
+button_t button(int, int, int, int, int, int, int, char*);
 void render_button(SDL_Renderer*, button_t*);
 bool button_was_pressed(button_t*);
 void button_process_event(button_t*, SDL_Event*);

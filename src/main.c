@@ -7,6 +7,7 @@
 #include "../include/button.h"
 #include "../include/main.h"
 #include "../include/label.h"
+#include "../include/scene.h"
 
 int main(int argc, char* argv[]) {
   SDL_Window* win   = NULL;
@@ -25,25 +26,7 @@ int main(int argc, char* argv[]) {
     return 1;
   }
 
-  AppState* as = setup();
-  SDL_Event e;
-
-  // printf("%s\n", );
-
-  // While application is running
-  while (!as->quit) {
-    handle_input(&e, as);
-    update(as);
-    render(ren, as);
-  }
-
-  // Clearn up SDL stuff
-  SDL_DestroyRenderer(ren);
-  SDL_DestroyWindow(win);
-  SDL_Quit();
-
-  // free application memory
-  free(as);
+  app_loop(ren, win);
 
   return 0;
 }
@@ -59,9 +42,9 @@ void render(SDL_Renderer* ren, AppState* as_p) {
   SDL_RenderClear(ren);
 
   // draw buttons
-  for (int i = 0; i < scene.buttonsc; i++) {
-    printf("%s\n", scene.buttons[i].title);
-  }
+  //for (int i = 0; i < scene.buttonsc; i++) {
+  //  printf("%s\n", scene.buttons[i].title);
+  //}
 
   // TODO: draw labels
   // for (int i = 0; i < scene.labelsc; i++) {
@@ -78,7 +61,7 @@ void update(AppState* as) {
 }
 
 void handle_input(SDL_Event* event, AppState* as_ptr) {
-  while (SDL_PollEvent(event)) {
+  while (SDL_PollEvent(event) != 0) {
     switch (event->type) {
       case SDL_KEYDOWN:
         handle_key_input(event, as_ptr);
@@ -107,15 +90,12 @@ void handle_key_input(SDL_Event* event, AppState* as_p) {
   }
 }
 
-// App Color Theme
-// 11, 19,  43
-// 28, 37,  65
-// 58, 80, 107
+void app_loop(SDL_Renderer* ren, SDL_Window* win) {
+  // SETUP
+  int FRAME_DELAY = 1000 / FPS;
+  uint32_t frameStart;
+  int frameTime;
 
-// button declaration example:
-// button_t button = { .rect = sdlrect(425, 450, 85, 50), .color = create_color(73, 82, 97), .pressed = false }; 
-
-AppState* setup() {
   color_t BG_COLOR = create_color(11, 19, 43);
   color_t SECONDARY_COLOR = create_color(28, 37, 65);
   color_t FG_COLOR = create_color(58, 80, 107);
@@ -123,57 +103,68 @@ AppState* setup() {
   // MARK: LABELS
   // main view
   label_t main_labels[2];
-  SDL_Rect rect1 = sdlrect(400, 400, 100, 100); // title label
-  SDL_Rect rect2 = sdlrect(400, 500, 300, 100); // choose sheet label
-  label_t title_label = { .text = "DND", .fg_color = FG_COLOR, .rect = &rect1 }; // title label
-  label_t sheet_label = { .text = "Choose Sheet:", .fg_color = FG_COLOR, .rect = &rect2 }; // choose sheet label
-  main_labels[0] = title_label;
-  main_labels[1] = sheet_label;
+  main_labels[0] = label("DND", 400, 400, 100, 100, 58, 80, 107); // title_label;
+  main_labels[1] = label("Choose Sheet:", 400, 500, 300, 100, 58, 80, 107); // sheet_label;
 
   // sheet view
   SDL_Rect r = sdlrect(0,0,0,0);
   label_t sheet_labels[4];
-  label_t name_label  = { .text = "Character Name", .fg_color = BG_COLOR, .rect = &r };
-  label_t race_label  = { .text = "Race", .fg_color = BG_COLOR, .rect = &r }; 
-  label_t class_label = { .text = "Class", .fg_color = BG_COLOR, .rect = &r };
-  label_t level_label = { .text = "Class", .fg_color = BG_COLOR, .rect = &r };
-  sheet_labels[0] = name_label;
-  sheet_labels[1] = race_label;
-  sheet_labels[2] = class_label;
-  sheet_labels[3] = level_label;
+  sheet_labels[0] = label("Character Name", 0, 0, 0, 0, 11, 19, 43);
+  sheet_labels[1] = label("Race", 0, 0, 0, 0, 11, 19, 43);
+  sheet_labels[2] = label("Class", 0, 0, 0, 0, 11, 19, 43);
+  sheet_labels[3] = label("Class", 0, 0, 0, 0, 11, 19, 43);
 
   // MARK: BUTTONS
   // main view
   button_t main_buttons[3];
-  button_t new_button      = { .rect = sdlrect(400, 700, 500, 100), .color = create_color(0, 0, 255), .title = "New Sheet", .pressed = false };
-  button_t quit_button     = { .rect = sdlrect(400, 800, 250, 100), .color = create_color(0, 0, 255), .title = "Quit", .pressed = false };
-  button_t settings_button = { .rect = sdlrect(650, 800, 250, 100), .color = create_color(0, 0, 255), .title = "Settings", .pressed = false };
-  main_buttons[0] = new_button;
-  main_buttons[1] = quit_button;
-  main_buttons[2] = settings_button;
+  main_buttons[0] = button(400, 700, 500, 100, 0, 0, 255, "New Sheet");
+  main_buttons[1] = button(400, 800, 250, 100, 0, 0, 255, "Quit");
+  main_buttons[2] = button(650, 800, 250, 100, 0, 0, 255, "Settings");
 
   //sheet view
-  button_t sv_buttons[2];
-  button_t save_button = { .rect = sdlrect(0,0,0,0), .color = create_color(0,0,0), .title = "Save File", .pressed = false };
-  button_t mm_button   = { .rect = sdlrect(0,0,0,0), .color = create_color(0,0,0), .title = "Main Menu", .pressed = false };
-  sv_buttons[0] = save_button;
-  sv_buttons[1] = mm_button;
+  button_t sv_buttons[3];
+  sv_buttons[0] = button(0, 0, 0, 0, 0, 0, 0, "Save File");
+  sv_buttons[1] = button(0, 0, 0, 0, 0, 0, 0, "Main Menu");
+  sv_buttons[2] = button(0, 0, 0, 0, 0, 0, 0, "null");
 
   // MARK: SCENES
-  scene_t main_scene = { .scene_name = "main", .bg_color = BG_COLOR, .buttonsc = 3, .labelsc = 2, .labels = main_labels, .buttons = main_buttons };
-  scene_t sheet_scene = { .scene_name = "sheet scene", .bg_color = BG_COLOR, .buttonsc = 2, .labelsc = 4, .labels = sheet_labels, .buttons = sv_buttons };
+  AppState as;
+  as.quit = false;
+  as.main_scene = scene("main", &BG_COLOR, 0, 0, main_labels, main_buttons);
+  as.sheet_scene = scene("sheet scene", &BG_COLOR, 0, 0, sheet_labels, sv_buttons);
+  as.curr_scene = 0;
+  as.BG_COLOR = BG_COLOR;
+  as.SECONDARY_COLOR = SECONDARY_COLOR;
+  as.FG_COLOR = FG_COLOR;
 
-  AppState* as = malloc(sizeof(AppState));
-  as->quit = false;
-  as->main_scene = main_scene;
-  as->sheet_scene = sheet_scene;
-  as->curr_scene = 0;
-  as->BG_COLOR = BG_COLOR;
-  as->SECONDARY_COLOR = SECONDARY_COLOR;
-  as->FG_COLOR = FG_COLOR;
+  // App Loop Begins
+  SDL_Event e;
 
-  return as;
+  // While application is running
+  while (!as.quit) {
+    frameStart = SDL_GetTicks();
+
+    handle_input(&e, &as);
+    update(&as);
+    render(ren, &as);
+
+    frameTime = SDL_GetTicks() - frameStart;
+
+    if (FRAME_DELAY > frameTime) {
+      SDL_Delay(FRAME_DELAY - frameTime);
+    }
+  }
+
+  // Clearn up SDL stuff
+  SDL_DestroyRenderer(ren);
+  SDL_DestroyWindow(win);
+  SDL_Quit();
 }
+
+// App Color Theme
+// 11, 19,  43 BG
+// 28, 37,  65 SEC
+// 58, 80, 107 FG
 
 scene_t state_get_curr_scene(AppState* as) {
   switch (as->curr_scene) {

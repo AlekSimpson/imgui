@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.7)
 project(imgui)
 
+SET(GCC_COVERAGE_COMPILE_FLAGS "-O3 -g")
 SET(GCC_COVERAGE_LINK_FLAGS    "-lSDL2 -lSDL2_ttf")
 
 find_package(SDL2 REQUIRED)

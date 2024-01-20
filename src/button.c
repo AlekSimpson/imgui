@@ -2,10 +2,11 @@
 #include <stdbool.h>
 #include <SDL2/SDL.h>
 
-button_t button(int x, int y, int w, int h, int r, int g, int b) {
+button_t button(int x, int y, int w, int h, int r, int g, int b, char* title) {
   button_t button;
   button.rect = sdlrect(x, y, w, h);
   button.color = create_color(r, g, b);
+  button.title = title;
   button.pressed = false;
   return button;
 }

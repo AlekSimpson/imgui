@@ -5,9 +5,13 @@
 
 #include "../include/label.h"
 #include "../include/color.h"
+#include "../include/button.h"
 
-label_t label(char* title, color_t* color, SDL_Rect* rect) {
-  label_t label = { .text = title, .fg_color = *color, .rect = rect };
+label_t label(char* title, int x, int y, int w, int h, int r, int g, int b) {
+  label_t label;
+  label.text = title;
+  label.fg_color = create_color(r, g, b);
+  label.rect = sdlrect(x, y, w, h);
   return label;
 }
 
