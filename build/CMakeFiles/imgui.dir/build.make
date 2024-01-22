@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/alek/Desktop/projects/imgui
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alek/Desktop/projects/imgui/build-dir
+CMAKE_BINARY_DIR = /home/alek/Desktop/projects/imgui/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/imgui.dir/depend.make
@@ -72,7 +72,7 @@ include CMakeFiles/imgui.dir/flags.make
 CMakeFiles/imgui.dir/src/main.c.o: CMakeFiles/imgui.dir/flags.make
 CMakeFiles/imgui.dir/src/main.c.o: ../src/main.c
 CMakeFiles/imgui.dir/src/main.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build-dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/imgui.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/imgui.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/main.c.o -MF CMakeFiles/imgui.dir/src/main.c.o.d -o CMakeFiles/imgui.dir/src/main.c.o -c /home/alek/Desktop/projects/imgui/src/main.c
 
 CMakeFiles/imgui.dir/src/main.c.i: cmake_force
@@ -86,7 +86,7 @@ CMakeFiles/imgui.dir/src/main.c.s: cmake_force
 CMakeFiles/imgui.dir/src/button.c.o: CMakeFiles/imgui.dir/flags.make
 CMakeFiles/imgui.dir/src/button.c.o: ../src/button.c
 CMakeFiles/imgui.dir/src/button.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build-dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/imgui.dir/src/button.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/imgui.dir/src/button.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/button.c.o -MF CMakeFiles/imgui.dir/src/button.c.o.d -o CMakeFiles/imgui.dir/src/button.c.o -c /home/alek/Desktop/projects/imgui/src/button.c
 
 CMakeFiles/imgui.dir/src/button.c.i: cmake_force
@@ -100,7 +100,7 @@ CMakeFiles/imgui.dir/src/button.c.s: cmake_force
 CMakeFiles/imgui.dir/src/color.c.o: CMakeFiles/imgui.dir/flags.make
 CMakeFiles/imgui.dir/src/color.c.o: ../src/color.c
 CMakeFiles/imgui.dir/src/color.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build-dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/imgui.dir/src/color.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/imgui.dir/src/color.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/color.c.o -MF CMakeFiles/imgui.dir/src/color.c.o.d -o CMakeFiles/imgui.dir/src/color.c.o -c /home/alek/Desktop/projects/imgui/src/color.c
 
 CMakeFiles/imgui.dir/src/color.c.i: cmake_force
@@ -114,7 +114,7 @@ CMakeFiles/imgui.dir/src/color.c.s: cmake_force
 CMakeFiles/imgui.dir/src/scene.c.o: CMakeFiles/imgui.dir/flags.make
 CMakeFiles/imgui.dir/src/scene.c.o: ../src/scene.c
 CMakeFiles/imgui.dir/src/scene.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build-dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/imgui.dir/src/scene.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/imgui.dir/src/scene.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/scene.c.o -MF CMakeFiles/imgui.dir/src/scene.c.o.d -o CMakeFiles/imgui.dir/src/scene.c.o -c /home/alek/Desktop/projects/imgui/src/scene.c
 
 CMakeFiles/imgui.dir/src/scene.c.i: cmake_force
@@ -128,7 +128,7 @@ CMakeFiles/imgui.dir/src/scene.c.s: cmake_force
 CMakeFiles/imgui.dir/src/label.c.o: CMakeFiles/imgui.dir/flags.make
 CMakeFiles/imgui.dir/src/label.c.o: ../src/label.c
 CMakeFiles/imgui.dir/src/label.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build-dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/imgui.dir/src/label.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/imgui.dir/src/label.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/label.c.o -MF CMakeFiles/imgui.dir/src/label.c.o.d -o CMakeFiles/imgui.dir/src/label.c.o -c /home/alek/Desktop/projects/imgui/src/label.c
 
 CMakeFiles/imgui.dir/src/label.c.i: cmake_force
@@ -139,13 +139,28 @@ CMakeFiles/imgui.dir/src/label.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/imgui.dir/src/label.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alek/Desktop/projects/imgui/src/label.c -o CMakeFiles/imgui.dir/src/label.c.s
 
+CMakeFiles/imgui.dir/src/vstack.c.o: CMakeFiles/imgui.dir/flags.make
+CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c
+CMakeFiles/imgui.dir/src/vstack.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/imgui.dir/src/vstack.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/vstack.c.o -MF CMakeFiles/imgui.dir/src/vstack.c.o.d -o CMakeFiles/imgui.dir/src/vstack.c.o -c /home/alek/Desktop/projects/imgui/src/vstack.c
+
+CMakeFiles/imgui.dir/src/vstack.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/imgui.dir/src/vstack.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alek/Desktop/projects/imgui/src/vstack.c > CMakeFiles/imgui.dir/src/vstack.c.i
+
+CMakeFiles/imgui.dir/src/vstack.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/imgui.dir/src/vstack.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alek/Desktop/projects/imgui/src/vstack.c -o CMakeFiles/imgui.dir/src/vstack.c.s
+
 # Object files for target imgui
 imgui_OBJECTS = \
 "CMakeFiles/imgui.dir/src/main.c.o" \
 "CMakeFiles/imgui.dir/src/button.c.o" \
 "CMakeFiles/imgui.dir/src/color.c.o" \
 "CMakeFiles/imgui.dir/src/scene.c.o" \
-"CMakeFiles/imgui.dir/src/label.c.o"
+"CMakeFiles/imgui.dir/src/label.c.o" \
+"CMakeFiles/imgui.dir/src/vstack.c.o"
 
 # External object files for target imgui
 imgui_EXTERNAL_OBJECTS =
@@ -155,9 +170,10 @@ imgui: CMakeFiles/imgui.dir/src/button.c.o
 imgui: CMakeFiles/imgui.dir/src/color.c.o
 imgui: CMakeFiles/imgui.dir/src/scene.c.o
 imgui: CMakeFiles/imgui.dir/src/label.c.o
+imgui: CMakeFiles/imgui.dir/src/vstack.c.o
 imgui: CMakeFiles/imgui.dir/build.make
 imgui: CMakeFiles/imgui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alek/Desktop/projects/imgui/build-dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable imgui"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imgui.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -169,6 +185,6 @@ CMakeFiles/imgui.dir/clean:
 .PHONY : CMakeFiles/imgui.dir/clean
 
 CMakeFiles/imgui.dir/depend:
-	cd /home/alek/Desktop/projects/imgui/build-dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alek/Desktop/projects/imgui /home/alek/Desktop/projects/imgui /home/alek/Desktop/projects/imgui/build-dir /home/alek/Desktop/projects/imgui/build-dir /home/alek/Desktop/projects/imgui/build-dir/CMakeFiles/imgui.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alek/Desktop/projects/imgui/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alek/Desktop/projects/imgui /home/alek/Desktop/projects/imgui /home/alek/Desktop/projects/imgui/build /home/alek/Desktop/projects/imgui/build /home/alek/Desktop/projects/imgui/build/CMakeFiles/imgui.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/imgui.dir/depend
 

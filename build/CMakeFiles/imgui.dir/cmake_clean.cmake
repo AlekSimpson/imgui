@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/imgui.dir/src/main.c.o.d"
   "CMakeFiles/imgui.dir/src/scene.c.o"
   "CMakeFiles/imgui.dir/src/scene.c.o.d"
+  "CMakeFiles/imgui.dir/src/vstack.c.o"
+  "CMakeFiles/imgui.dir/src/vstack.c.o.d"
   "imgui"
   "imgui.pdb"
 )

@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
-#include "color.h"
 #include <stdbool.h>
+
+#include "color.h"
 
 #ifndef __BUTTON_H__
 #define __BUTTON_H__

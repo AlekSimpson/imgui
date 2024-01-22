@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
+#include <string.h>
 
 #include "../include/color.h"
 #include "../include/button.h"
 #include "../include/main.h"
 #include "../include/label.h"
 #include "../include/scene.h"
+#include "../include/vstack.h"
 
 int main(int argc, char* argv[]) {
   SDL_Window* win   = NULL;
@@ -42,9 +44,9 @@ void render(SDL_Renderer* ren, AppState* as_p) {
   SDL_RenderClear(ren);
 
   // draw buttons
-  //for (int i = 0; i < scene.buttonsc; i++) {
-  //  printf("%s\n", scene.buttons[i].title);
-  //}
+  for (int i = 0; i < scene.buttonsc; i++) {
+    render_button(ren, &scene.buttons[i]);
+  }
 
   // TODO: draw labels
   // for (int i = 0; i < scene.labelsc; i++) {
@@ -55,22 +57,36 @@ void render(SDL_Renderer* ren, AppState* as_p) {
 }
 
 void update(AppState* as) {
-  // if (button_was_pressed(&as->scenes[0].buttons[0])) {
-    // printf("button was pressed\n");
-  // }
+  scene_t curr_scene = state_get_curr_scene(as);
+
+  for (int i = 0; i < curr_scene.buttonsc; i++) {
+    if (button_was_pressed(&curr_scene.buttons[i])) {
+      handle_ui_button_input(curr_scene.buttons[i].title, as);
+    }
+  }
 }
 
 void handle_input(SDL_Event* event, AppState* as_ptr) {
+  scene_t curr_scene = state_get_curr_scene(as_ptr);
   while (SDL_PollEvent(event) != 0) {
     switch (event->type) {
       case SDL_KEYDOWN:
         handle_key_input(event, as_ptr);
         break;
       case SDL_MOUSEBUTTONDOWN:
+        for (int i = 0; i < curr_scene.buttonsc; i++) {
+          button_process_event(&curr_scene.buttons[i], event);
+        }
         break;
       default:
         break;
     }
+  }
+}
+
+void handle_ui_button_input(char* button_title, AppState* as) {
+  if (strcmp("Quit", button_title) == 0) {
+      as->quit = true;
   }
 }
 
@@ -116,10 +132,11 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
 
   // MARK: BUTTONS
   // main view
-  button_t main_buttons[3];
-  main_buttons[0] = button(400, 700, 500, 100, 0, 0, 255, "New Sheet");
-  main_buttons[1] = button(400, 800, 250, 100, 0, 0, 255, "Quit");
-  main_buttons[2] = button(650, 800, 250, 100, 0, 0, 255, "Settings");
+  button_t main_buttons[3]; // 1920w, 1080h
+  vstack_t main_button_stack = vstack(200, 200, 0, 10);
+  main_buttons[0] = stack_add_button(&main_button_stack, 500, 100, 0, 0, 255, "New Sheet");
+  main_buttons[1] = stack_add_button(&main_button_stack, 245, 100, 0, 0, 255, "Quit");
+  main_buttons[2] = stack_add_button(&main_button_stack, 245, 100, 0, 0, 255, "Settings");
 
   //sheet view
   button_t sv_buttons[3];

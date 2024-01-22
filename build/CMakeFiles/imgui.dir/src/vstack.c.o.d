@@ -1,6 +1,6 @@
-CMakeFiles/imgui.dir/src/main.c.o: \
- /home/alek/Desktop/projects/imgui/src/main.c /usr/include/stdc-predef.h \
- /usr/include/stdio.h \
+CMakeFiles/imgui.dir/src/vstack.c.o: \
+ /home/alek/Desktop/projects/imgui/src/vstack.c \
+ /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -48,7 +48,8 @@ CMakeFiles/imgui.dir/src/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /home/alek/Desktop/projects/imgui/src/../include/vstack.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/button.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
@@ -177,12 +178,7 @@ CMakeFiles/imgui.dir/src/main.c.o: \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- /home/alek/Desktop/projects/imgui/src/../include/color.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/color.h \
  /home/alek/Desktop/projects/imgui/src/../include/button.h \
- /home/alek/Desktop/projects/imgui/src/../include/color.h \
- /home/alek/Desktop/projects/imgui/src/../include/main.h \
- /home/alek/Desktop/projects/imgui/src/../include/button.h \
- /home/alek/Desktop/projects/imgui/src/../include/label.h \
- /home/alek/Desktop/projects/imgui/src/../include/scene.h \
- /home/alek/Desktop/projects/imgui/src/../include/label.h \
- /home/alek/Desktop/projects/imgui/src/../include/scene.h
+ /home/alek/Desktop/projects/imgui/src/../include/color.h

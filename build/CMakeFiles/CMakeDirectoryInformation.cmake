@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/alek/Desktop/projects/imgui")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/alek/Desktop/projects/imgui/build-dir")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/alek/Desktop/projects/imgui/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

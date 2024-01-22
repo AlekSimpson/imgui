@@ -8,8 +8,8 @@
 
 #define SDL_MAIN_HANDLED
 
-#define WINDOW_WIDTH 900
-#define WINDOW_HEIGHT 850
+#define WINDOW_WIDTH 1920
+#define WINDOW_HEIGHT 1080
 #define FPS 30
 
 typedef struct {
@@ -30,17 +30,18 @@ void handle_key_input(SDL_Event*, AppState*);
 void update(AppState* as);
 AppState* heap_setup();
 void app_loop(SDL_Renderer*, SDL_Window*);
+void handle_ui_button_input(char* button_title, AppState* as);
 
 scene_t state_get_curr_scene(AppState*);
 
 #endif
 
 // Window:
-//            900
-//     ------------------ x
-//     |
-//     |
-// 850 |
-//     | 
-//     |
-//     y
+//              1920
+//      ------------------ x
+//      |
+//      |
+// 1080 |
+//      | 
+//      |
+//      y

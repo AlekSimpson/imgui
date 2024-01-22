@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/alek/Desktop/projects/imgui
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alek/Desktop/projects/imgui/build-dir
+CMAKE_BINARY_DIR = /home/alek/Desktop/projects/imgui/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alek/Desktop/projects/imgui/build-dir/CMakeFiles /home/alek/Desktop/projects/imgui/build-dir//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alek/Desktop/projects/imgui/build/CMakeFiles /home/alek/Desktop/projects/imgui/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alek/Desktop/projects/imgui/build-dir/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alek/Desktop/projects/imgui/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -249,6 +249,30 @@ src/scene.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/scene.c.s
 .PHONY : src/scene.c.s
 
+src/vstack.o: src/vstack.c.o
+.PHONY : src/vstack.o
+
+# target to build an object file
+src/vstack.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/vstack.c.o
+.PHONY : src/vstack.c.o
+
+src/vstack.i: src/vstack.c.i
+.PHONY : src/vstack.i
+
+# target to preprocess a source file
+src/vstack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/vstack.c.i
+.PHONY : src/vstack.c.i
+
+src/vstack.s: src/vstack.c.s
+.PHONY : src/vstack.s
+
+# target to generate assembly for a file
+src/vstack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/vstack.c.s
+.PHONY : src/vstack.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"
+	@echo "... src/vstack.o"
+	@echo "... src/vstack.i"
+	@echo "... src/vstack.s"
 .PHONY : help
 
 
