@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include <string.h>
 
 #include "../include/color.h"
@@ -45,7 +46,7 @@ void render(SDL_Renderer* ren, AppState* as_p) {
 
   // draw buttons
   for (int i = 0; i < scene.buttonsc; i++) {
-    render_button(ren, &scene.buttons[i]);
+    render_button(ren, &scene.buttons[i], as_p->FONT);
   }
 
   // TODO: draw labels
@@ -111,6 +112,12 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   int FRAME_DELAY = 1000 / FPS;
   uint32_t frameStart;
   int frameTime;
+  TTF_Font* font = TTF_OpenFont("/home/alek/Desktop/projects/imgui/assets/FreeSans.ttf", 24);
+
+  if (font == NULL) {
+    printf("failed to load font\n");
+    return;
+  }
 
   color_t BG_COLOR = create_color(11, 19, 43);
   color_t SECONDARY_COLOR = create_color(28, 37, 65);
@@ -130,19 +137,20 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   sheet_labels[2] = label("Class", 0, 0, 0, 0, 11, 19, 43);
   sheet_labels[3] = label("Class", 0, 0, 0, 0, 11, 19, 43);
 
+  // SDL_Renderer* ren, int x, int y, int w, int h, int r, int g, int b, char* title, TTF_Font* font
   // MARK: BUTTONS
   // main view
   button_t main_buttons[3]; // 1920w, 1080h
-  vstack_t main_button_stack = vstack(200, 200, 0, 10);
-  main_buttons[0] = stack_add_button(&main_button_stack, 500, 100, 0, 0, 255, "New Sheet");
-  main_buttons[1] = stack_add_button(&main_button_stack, 245, 100, 0, 0, 255, "Quit");
-  main_buttons[2] = stack_add_button(&main_button_stack, 245, 100, 0, 0, 255, "Settings");
+  vstack_t main_button_stack = vstack(0, 0, 0, 10, CENTER);
+  main_buttons[0] = stack_add_button(&main_button_stack, ren, 500, 100, 0, 0, 255, "New Sheet", font);
+  main_buttons[1] = stack_add_button(&main_button_stack, ren, 245, 100, 0, 0, 255, "Settings", font);
+  main_buttons[2] = stack_add_button(&main_button_stack, ren, 245, 100, 0, 0, 255, "Quit", font);
 
   //sheet view
   button_t sv_buttons[3];
-  sv_buttons[0] = button(0, 0, 0, 0, 0, 0, 0, "Save File");
-  sv_buttons[1] = button(0, 0, 0, 0, 0, 0, 0, "Main Menu");
-  sv_buttons[2] = button(0, 0, 0, 0, 0, 0, 0, "null");
+  sv_buttons[0] = button(ren, 0, 0, 0, 0, 0, 0, 0, "Save File", font);
+  sv_buttons[1] = button(ren, 0, 0, 0, 0, 0, 0, 0, "Main Menu", font);
+  sv_buttons[2] = button(ren, 0, 0, 0, 0, 0, 0, 0, "null", font);
 
   // MARK: SCENES
   AppState as;
@@ -153,6 +161,7 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   as.BG_COLOR = BG_COLOR;
   as.SECONDARY_COLOR = SECONDARY_COLOR;
   as.FG_COLOR = FG_COLOR;
+  as.FONT = font;
 
   // App Loop Begins
   SDL_Event e;

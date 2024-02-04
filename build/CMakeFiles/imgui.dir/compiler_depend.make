@@ -213,6 +213,8 @@ CMakeFiles/imgui.dir/src/button.c.o: ../src/button.c \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
+  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../include/color.h
 
@@ -675,6 +677,8 @@ CMakeFiles/imgui.dir/src/main.c.o: ../src/main.c \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
+  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL.h \
   ../include/color.h \
   ../include/button.h \
   ../include/color.h \
@@ -903,6 +907,8 @@ CMakeFiles/imgui.dir/src/scene.c.o: ../src/scene.c \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
   ../include/button.h \
+  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
 
 CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
@@ -1118,6 +1124,8 @@ CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
+  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../include/color.h \
   ../include/button.h \
@@ -1134,9 +1142,9 @@ CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
 
 ../src/main.c:
 
-/usr/include/SDL2/SDL_ttf.h:
-
 ../src/color.c:
+
+/usr/include/SDL2/SDL_ttf.h:
 
 /usr/include/SDL2/SDL_misc.h:
 

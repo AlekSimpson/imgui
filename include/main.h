@@ -20,6 +20,7 @@ typedef struct {
   color_t BG_COLOR;
   color_t SECONDARY_COLOR;
   color_t FG_COLOR;
+  TTF_Font* FONT;
 } AppState;
 
 void handle_input(SDL_Event*, AppState*);
