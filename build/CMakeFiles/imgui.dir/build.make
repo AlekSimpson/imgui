@@ -139,19 +139,19 @@ CMakeFiles/imgui.dir/src/label.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/imgui.dir/src/label.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alek/Desktop/projects/imgui/src/label.c -o CMakeFiles/imgui.dir/src/label.c.s
 
-CMakeFiles/imgui.dir/src/vstack.c.o: CMakeFiles/imgui.dir/flags.make
-CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c
-CMakeFiles/imgui.dir/src/vstack.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/imgui.dir/src/vstack.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/vstack.c.o -MF CMakeFiles/imgui.dir/src/vstack.c.o.d -o CMakeFiles/imgui.dir/src/vstack.c.o -c /home/alek/Desktop/projects/imgui/src/vstack.c
+CMakeFiles/imgui.dir/src/stack.c.o: CMakeFiles/imgui.dir/flags.make
+CMakeFiles/imgui.dir/src/stack.c.o: ../src/stack.c
+CMakeFiles/imgui.dir/src/stack.c.o: CMakeFiles/imgui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/imgui.dir/src/stack.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/imgui.dir/src/stack.c.o -MF CMakeFiles/imgui.dir/src/stack.c.o.d -o CMakeFiles/imgui.dir/src/stack.c.o -c /home/alek/Desktop/projects/imgui/src/stack.c
 
-CMakeFiles/imgui.dir/src/vstack.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/imgui.dir/src/vstack.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alek/Desktop/projects/imgui/src/vstack.c > CMakeFiles/imgui.dir/src/vstack.c.i
+CMakeFiles/imgui.dir/src/stack.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/imgui.dir/src/stack.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alek/Desktop/projects/imgui/src/stack.c > CMakeFiles/imgui.dir/src/stack.c.i
 
-CMakeFiles/imgui.dir/src/vstack.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/imgui.dir/src/vstack.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alek/Desktop/projects/imgui/src/vstack.c -o CMakeFiles/imgui.dir/src/vstack.c.s
+CMakeFiles/imgui.dir/src/stack.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/imgui.dir/src/stack.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alek/Desktop/projects/imgui/src/stack.c -o CMakeFiles/imgui.dir/src/stack.c.s
 
 # Object files for target imgui
 imgui_OBJECTS = \
@@ -160,7 +160,7 @@ imgui_OBJECTS = \
 "CMakeFiles/imgui.dir/src/color.c.o" \
 "CMakeFiles/imgui.dir/src/scene.c.o" \
 "CMakeFiles/imgui.dir/src/label.c.o" \
-"CMakeFiles/imgui.dir/src/vstack.c.o"
+"CMakeFiles/imgui.dir/src/stack.c.o"
 
 # External object files for target imgui
 imgui_EXTERNAL_OBJECTS =
@@ -170,7 +170,7 @@ imgui: CMakeFiles/imgui.dir/src/button.c.o
 imgui: CMakeFiles/imgui.dir/src/color.c.o
 imgui: CMakeFiles/imgui.dir/src/scene.c.o
 imgui: CMakeFiles/imgui.dir/src/label.c.o
-imgui: CMakeFiles/imgui.dir/src/vstack.c.o
+imgui: CMakeFiles/imgui.dir/src/stack.c.o
 imgui: CMakeFiles/imgui.dir/build.make
 imgui: CMakeFiles/imgui.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alek/Desktop/projects/imgui/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable imgui"

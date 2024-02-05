@@ -1,5 +1,5 @@
-CMakeFiles/imgui.dir/src/scene.c.o: \
- /home/alek/Desktop/projects/imgui/src/scene.c /usr/include/stdc-predef.h \
+CMakeFiles/imgui.dir/src/stack.c.o: \
+ /home/alek/Desktop/projects/imgui/src/stack.c /usr/include/stdc-predef.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -48,9 +48,8 @@ CMakeFiles/imgui.dir/src/scene.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/alek/Desktop/projects/imgui/src/../include/scene.h \
- /home/alek/Desktop/projects/imgui/src/../include/label.h \
- /home/alek/Desktop/projects/imgui/src/../include/color.h \
+ /home/alek/Desktop/projects/imgui/src/../include/stack.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/button.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
@@ -179,5 +178,9 @@ CMakeFiles/imgui.dir/src/scene.c.o: \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/color.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/label.h \
  /home/alek/Desktop/projects/imgui/src/../include/button.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
+ /home/alek/Desktop/projects/imgui/src/../include/color.h

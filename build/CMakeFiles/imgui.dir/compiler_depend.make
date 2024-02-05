@@ -688,9 +688,10 @@ CMakeFiles/imgui.dir/src/main.c.o: ../src/main.c \
   ../include/scene.h \
   ../include/label.h \
   ../include/scene.h \
-  ../include/vstack.h \
+  ../include/stack.h \
   ../include/button.h \
-  ../include/color.h
+  ../include/color.h \
+  ../include/label.h
 
 CMakeFiles/imgui.dir/src/scene.c.o: ../src/scene.c \
   /usr/include/stdc-predef.h \
@@ -906,12 +907,12 @@ CMakeFiles/imgui.dir/src/scene.c.o: ../src/scene.c \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
-  ../include/button.h \
   /usr/include/SDL2/SDL_ttf.h \
   /usr/include/SDL2/SDL.h \
+  ../include/button.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
 
-CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
+CMakeFiles/imgui.dir/src/stack.c.o: ../src/stack.c \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -965,7 +966,7 @@ CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  ../include/vstack.h \
+  ../include/stack.h \
   ../include/button.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
@@ -1128,13 +1129,16 @@ CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
   /usr/include/SDL2/SDL.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   ../include/color.h \
+  ../include/label.h \
   ../include/button.h \
   ../include/color.h
 
 
+../src/stack.c:
+
 ../src/scene.c:
 
-../include/vstack.h:
+../include/stack.h:
 
 ../include/scene.h:
 
@@ -1165,8 +1169,6 @@ CMakeFiles/imgui.dir/src/vstack.c.o: ../src/vstack.c \
 /usr/include/SDL2/SDL_loadso.h:
 
 /usr/include/SDL2/SDL_filesystem.h:
-
-../src/vstack.c:
 
 /usr/include/SDL2/SDL_gesture.h:
 

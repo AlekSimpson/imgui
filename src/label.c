@@ -7,18 +7,21 @@
 #include "../include/color.h"
 #include "../include/button.h"
 
-label_t label(char* title, int x, int y, int w, int h, int r, int g, int b) {
+label_t label(SDL_Renderer* ren, TTF_Font* font, char* title, int x, int y, int w, int h, int r, int g, int b) {
   label_t label;
+
   label.text = title;
-  label.fg_color = create_color(r, g, b);
+  label.FG_COLOR = create_color(r, g, b);
   label.rect = sdlrect(x, y, w, h);
+
+  SDL_Color color = { label.FG_COLOR.r, label.FG_COLOR.g, label.FG_COLOR.b };
+
+  label.surface = TTF_RenderText_Solid(font, title, color);
+  label.texture = SDL_CreateTextureFromSurface(ren, label.surface);
+
   return label;
 }
 
 void render_label(SDL_Renderer* ren, label_t* lbl) {
-  TTF_Font* Sans = TTF_OpenFont("Sans.ttf", 24);
-  SDL_Color sdl_color = { lbl->fg_color.r, lbl->fg_color.g, lbl->fg_color.b };
-  SDL_Surface* surface_message = TTF_RenderText_Solid(Sans, lbl->text, sdl_color); 
-  SDL_Texture* message = SDL_CreateTextureFromSurface(ren, surface_message);
-  SDL_RenderCopy(ren, message, NULL, &lbl->rect);
+  SDL_RenderCopy(ren, lbl->texture, NULL, &lbl->rect);
 }

@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "color.h"
 #include "button.h"
 #include "label.h"
@@ -24,7 +25,7 @@ typedef struct {
 } AppState;
 
 void handle_input(SDL_Event*, AppState*);
-void render(SDL_Renderer*, AppState*);
+void render(SDL_Renderer*, AppState*, bool debug);
 color_t get_current_color(AppState*);
 void print_carousel(color_t*);
 void handle_key_input(SDL_Event*, AppState*);

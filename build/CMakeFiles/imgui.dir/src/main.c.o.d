@@ -187,6 +187,7 @@ CMakeFiles/imgui.dir/src/main.c.o: \
  /home/alek/Desktop/projects/imgui/src/../include/scene.h \
  /home/alek/Desktop/projects/imgui/src/../include/label.h \
  /home/alek/Desktop/projects/imgui/src/../include/scene.h \
- /home/alek/Desktop/projects/imgui/src/../include/vstack.h \
+ /home/alek/Desktop/projects/imgui/src/../include/stack.h \
  /home/alek/Desktop/projects/imgui/src/../include/../include/button.h \
- /home/alek/Desktop/projects/imgui/src/../include/../include/color.h
+ /home/alek/Desktop/projects/imgui/src/../include/../include/color.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/label.h

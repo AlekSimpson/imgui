@@ -10,7 +10,7 @@
 #include "../include/main.h"
 #include "../include/label.h"
 #include "../include/scene.h"
-#include "../include/vstack.h"
+#include "../include/stack.h"
 
 int main(int argc, char* argv[]) {
   SDL_Window* win   = NULL;
@@ -34,25 +34,34 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 
-void render(SDL_Renderer* ren, AppState* as_p) {
+void render(SDL_Renderer* ren, AppState* as_p, bool debug) {
   // get current scene to render
   scene_t scene = state_get_curr_scene(as_p);
 
   SDL_RenderClear(ren); // RENDER START
 
+
   // draw background
   SDL_SetRenderDrawColor(ren, as_p->BG_COLOR.r, as_p->BG_COLOR.g, as_p->BG_COLOR.b, 255);
   SDL_RenderClear(ren);
+
+  if (debug) {
+    //
+    // DEBUG
+    //
+    color_t color = create_color(255, 0, 0);
+    draw_rectangle(ren, &color, true, 0, 160, 1920, 100);
+  }
 
   // draw buttons
   for (int i = 0; i < scene.buttonsc; i++) {
     render_button(ren, &scene.buttons[i], as_p->FONT);
   }
 
-  // TODO: draw labels
-  // for (int i = 0; i < scene.labelsc; i++) {
-    // render_label(ren, &scene.labels[i]);
-  // }
+  // draw labels
+  for (int i = 0; i < scene.labelsc; i++) {
+    render_label(ren, &scene.labels[i]);
+  }
 
   SDL_RenderPresent(ren); // RENDER END
 }
@@ -125,38 +134,30 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
 
   // MARK: LABELS
   // main view
-  label_t main_labels[2];
-  main_labels[0] = label("DND", 400, 400, 100, 100, 58, 80, 107); // title_label;
-  main_labels[1] = label("Choose Sheet:", 400, 500, 300, 100, 58, 80, 107); // sheet_label;
+  int main_label_count = 2;
+  int main_button_count = 3;
 
-  // sheet view
-  SDL_Rect r = sdlrect(0,0,0,0);
-  label_t sheet_labels[4];
-  sheet_labels[0] = label("Character Name", 0, 0, 0, 0, 11, 19, 43);
-  sheet_labels[1] = label("Race", 0, 0, 0, 0, 11, 19, 43);
-  sheet_labels[2] = label("Class", 0, 0, 0, 0, 11, 19, 43);
-  sheet_labels[3] = label("Class", 0, 0, 0, 0, 11, 19, 43);
+  int sheet_button_count = 3;
+  int sheet_label_count = 4;
 
-  // SDL_Renderer* ren, int x, int y, int w, int h, int r, int g, int b, char* title, TTF_Font* font
-  // MARK: BUTTONS
-  // main view
-  button_t main_buttons[3]; // 1920w, 1080h
-  vstack_t main_button_stack = vstack(0, 0, 0, 10, CENTER);
-  main_buttons[0] = stack_add_button(&main_button_stack, ren, 500, 100, 0, 0, 255, "New Sheet", font);
-  main_buttons[1] = stack_add_button(&main_button_stack, ren, 245, 100, 0, 0, 255, "Settings", font);
-  main_buttons[2] = stack_add_button(&main_button_stack, ren, 245, 100, 0, 0, 255, "Quit", font);
+  button_t main_buttons[main_button_count]; // 1920w, 1080h
+  label_t main_labels[main_label_count];
+  label_t sheet_labels[sheet_label_count];
+  button_t sheet_buttons[sheet_button_count];
 
-  //sheet view
-  button_t sv_buttons[3];
-  sv_buttons[0] = button(ren, 0, 0, 0, 0, 0, 0, 0, "Save File", font);
-  sv_buttons[1] = button(ren, 0, 0, 0, 0, 0, 0, 0, "Main Menu", font);
-  sv_buttons[2] = button(ren, 0, 0, 0, 0, 0, 0, 0, "null", font);
+  vstack_t main_root_stack = vstack(0, 0, 50, 20, CENTER); // the scenes root stack always starts at coordinates (0, 0)
+  main_buttons[0] = vstack_add_button(&main_root_stack, ren, 500, 100, 0, 0, 255, "New Sheet", font);
+
+  hstack_t button_hstack = vstack_add_hstack(&main_root_stack, ((1920 / 2)), 10, 1920, 100, MIDDLE);
+
+  main_buttons[1] = hstack_add_button(&button_hstack, ren, 220, 100, 0, 0, 255, "Settings", font);
+  main_buttons[2] = hstack_add_button(&button_hstack, ren, 220, 100, 0, 0, 255, "Quit", font);
 
   // MARK: SCENES
   AppState as;
   as.quit = false;
-  as.main_scene = scene("main", &BG_COLOR, 0, 0, main_labels, main_buttons);
-  as.sheet_scene = scene("sheet scene", &BG_COLOR, 0, 0, sheet_labels, sv_buttons);
+  as.main_scene = scene("MAIN-SCENE", &BG_COLOR, main_button_count, main_label_count, main_labels, main_buttons);
+  as.sheet_scene = scene("SHEET-SCENE", &BG_COLOR, sheet_button_count, sheet_label_count, sheet_labels, sheet_buttons);
   as.curr_scene = 0;
   as.BG_COLOR = BG_COLOR;
   as.SECONDARY_COLOR = SECONDARY_COLOR;
@@ -172,7 +173,7 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
 
     handle_input(&e, &as);
     update(&as);
-    render(ren, &as);
+    render(ren, &as, true);
 
     frameTime = SDL_GetTicks() - frameStart;
 
@@ -186,6 +187,12 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   SDL_DestroyWindow(win);
   SDL_Quit();
 }
+
+// to add an hstack to the mainstack
+// hstack_t test_hstack = vstack_add_hstack(&main_button_stack, 25, 0, 600, 300, TOP);
+
+// main_buttons[3] = hstack_add_button(&test_hstack, ren, 245, 100, 0, 255, 0, "A", font);
+// main_buttons[4] = hstack_add_button(&test_hstack, ren, 245, 100, 0, 255, 0, "B", font);
 
 // App Color Theme
 // 11, 19,  43 BG

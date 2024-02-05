@@ -249,29 +249,29 @@ src/scene.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/scene.c.s
 .PHONY : src/scene.c.s
 
-src/vstack.o: src/vstack.c.o
-.PHONY : src/vstack.o
+src/stack.o: src/stack.c.o
+.PHONY : src/stack.o
 
 # target to build an object file
-src/vstack.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/vstack.c.o
-.PHONY : src/vstack.c.o
+src/stack.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/stack.c.o
+.PHONY : src/stack.c.o
 
-src/vstack.i: src/vstack.c.i
-.PHONY : src/vstack.i
+src/stack.i: src/stack.c.i
+.PHONY : src/stack.i
 
 # target to preprocess a source file
-src/vstack.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/vstack.c.i
-.PHONY : src/vstack.c.i
+src/stack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/stack.c.i
+.PHONY : src/stack.c.i
 
-src/vstack.s: src/vstack.c.s
-.PHONY : src/vstack.s
+src/stack.s: src/stack.c.s
+.PHONY : src/stack.s
 
 # target to generate assembly for a file
-src/vstack.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/vstack.c.s
-.PHONY : src/vstack.c.s
+src/stack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/stack.c.s
+.PHONY : src/stack.c.s
 
 # Help Target
 help:
@@ -297,9 +297,9 @@ help:
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"
-	@echo "... src/vstack.o"
-	@echo "... src/vstack.i"
-	@echo "... src/vstack.s"
+	@echo "... src/stack.o"
+	@echo "... src/stack.i"
+	@echo "... src/stack.s"
 .PHONY : help
 
 

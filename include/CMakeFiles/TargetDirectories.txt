@@ -1,3 +1,0 @@
-/home/alek/Desktop/projects/imgui/include/CMakeFiles/imgui.dir
-/home/alek/Desktop/projects/imgui/include/CMakeFiles/edit_cache.dir
-/home/alek/Desktop/projects/imgui/include/CMakeFiles/rebuild_cache.dir

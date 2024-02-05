@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/imgui.dir/src/main.c.o CMakeFiles/imgui.dir/src/button.c.o CMakeFiles/imgui.dir/src/color.c.o CMakeFiles/imgui.dir/src/scene.c.o CMakeFiles/imgui.dir/src/label.c.o -o imgui  -L/usr/lib/x86_64-linux-gnu  -lSDL2 -lSDL2_ttf 
