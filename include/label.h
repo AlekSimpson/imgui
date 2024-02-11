@@ -16,5 +16,7 @@ typedef struct {
 
 void render_label(SDL_Renderer*, label_t*);
 label_t label(SDL_Renderer*, TTF_Font*, char*, int x, int y, int w, int h, int r, int g, int b);
+label_t label_white(SDL_Renderer*, TTF_Font*, char*, int x, int y, int w, int h);
+label_t label_black(SDL_Renderer*, TTF_Font*, char*, int x, int y, int w, int h);
 
 #endif

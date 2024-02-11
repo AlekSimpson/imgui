@@ -38,7 +38,10 @@ void render(SDL_Renderer* ren, AppState* as_p, bool debug) {
   // get current scene to render
   scene_t scene = state_get_curr_scene(as_p);
 
-  SDL_RenderClear(ren); // RENDER START
+  //
+  // RENDER START
+  //
+  SDL_RenderClear(ren); 
 
 
   // draw background
@@ -63,7 +66,11 @@ void render(SDL_Renderer* ren, AppState* as_p, bool debug) {
     render_label(ren, &scene.labels[i]);
   }
 
-  SDL_RenderPresent(ren); // RENDER END
+
+  SDL_RenderPresent(ren); 
+  //
+  // RENDER END
+  //
 }
 
 void update(AppState* as) {
@@ -118,12 +125,14 @@ void handle_key_input(SDL_Event* event, AppState* as_p) {
 
 void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   // SETUP
+  char* FONT_PATH = "/home/alek/Desktop/projects/imgui/assets/FreeSans.ttf";
   int FRAME_DELAY = 1000 / FPS;
   uint32_t frameStart;
   int frameTime;
-  TTF_Font* font = TTF_OpenFont("/home/alek/Desktop/projects/imgui/assets/FreeSans.ttf", 24);
+  TTF_Font* font24 = TTF_OpenFont(FONT_PATH, 24);
+  TTF_Font* font_title = TTF_OpenFont(FONT_PATH, 60);
 
-  if (font == NULL) {
+  if (font24 == NULL || font_title == NULL) {
     printf("failed to load font\n");
     return;
   }
@@ -133,7 +142,8 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   color_t FG_COLOR = create_color(58, 80, 107);
 
   // MARK: LABELS
-  // main view
+  /// view declarations
+  //
   int main_label_count = 2;
   int main_button_count = 3;
 
@@ -141,17 +151,21 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   int sheet_label_count = 4;
 
   button_t main_buttons[main_button_count]; // 1920w, 1080h
-  label_t main_labels[main_label_count];
-  label_t sheet_labels[sheet_label_count];
+  label_t  main_labels[main_label_count];
+
+  label_t  sheet_labels[sheet_label_count];
   button_t sheet_buttons[sheet_button_count];
 
-  vstack_t main_root_stack = vstack(0, 0, 50, 20, CENTER); // the scenes root stack always starts at coordinates (0, 0)
-  main_buttons[0] = vstack_add_button(&main_root_stack, ren, 500, 100, 0, 0, 255, "New Sheet", font);
+  /// view definitions
+  //
+  vstack_t main_root_stack = vstack(0, 0, 50, 20, 20, CENTER); // the scenes root stack always starts at coordinates (0, 0)
+  main_labels[0]  = vstack_add_label(&main_root_stack, ren, font_title, "DND", 250, 100, 255, 255, 255);
+  main_buttons[0] = vstack_add_button(&main_root_stack, ren, 500, 100, 0, 0, 255, "New Sheet", font24);
 
-  hstack_t button_hstack = vstack_add_hstack(&main_root_stack, ((1920 / 2)), 10, 1920, 100, MIDDLE);
+  hstack_t button_hstack = vstack_add_hstack(&main_root_stack, 0, 0, 60, 500, 100, MIDDLE);
 
-  main_buttons[1] = hstack_add_button(&button_hstack, ren, 220, 100, 0, 0, 255, "Settings", font);
-  main_buttons[2] = hstack_add_button(&button_hstack, ren, 220, 100, 0, 0, 255, "Quit", font);
+  main_buttons[1] = hstack_add_button(&button_hstack, ren, 220, 100, 0, 0, 255, "Settings", font24);
+  main_buttons[2] = hstack_add_button(&button_hstack, ren, 220, 100, 0, 0, 255, "Quit", font24);
 
   // MARK: SCENES
   AppState as;
@@ -162,7 +176,7 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
   as.BG_COLOR = BG_COLOR;
   as.SECONDARY_COLOR = SECONDARY_COLOR;
   as.FG_COLOR = FG_COLOR;
-  as.FONT = font;
+  as.FONT = font24;
 
   // App Loop Begins
   SDL_Event e;
@@ -173,7 +187,7 @@ void app_loop(SDL_Renderer* ren, SDL_Window* win) {
 
     handle_input(&e, &as);
     update(&as);
-    render(ren, &as, true);
+    render(ren, &as, false);
 
     frameTime = SDL_GetTicks() - frameStart;
 
