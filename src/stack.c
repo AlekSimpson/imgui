@@ -3,6 +3,7 @@
 
 #include "../include/stack.h"
 #include "../include/button.h"
+#include "../include/scrollview.h"
 
 int calculateVAlignment(int ox, int cx, int w, int item_w, enum VALIGNMENT valignment) {
   // cx used to be for "curr_x", curr_x was removed from vstack_t and instead x_pad is used for cx 
@@ -125,6 +126,47 @@ label_t vstack_add_label(vstack_t* stack, SDL_Renderer* ren, TTF_Font* font, cha
   lbl = label(ren, font, title, lbl_x, lbl_y, w, h, r, g, b);
   stack->curr_y = stack->curr_y + (h + stack->pad_between);
   return lbl;
+}
+
+// cannot return direct type, instead returns type inside of a union with other special view types
+special_view_u vstack_add_scrollview(vstack_t* stack, int* id_state, int x_pad, int pad_between, int width, int height) {
+  if (item_exceeds_stack_size(stack->width, stack->height, width, height, (stack->curr_y - stack->height))) {
+    printf("EXCEPTION: scroll view to big for vstack\n");
+    exit(1);
+  }
+
+  enum VALIGNMENT valignment = stack->valignment;
+  int sv_x, sv_y;
+  scrollview_t sv;
+  special_view_u svu;
+
+  sv_x = calculateVAlignment(stack->origin_x, stack->x_pad, stack->width, width, valignment);
+  sv_y = stack->origin_y + stack->curr_y;
+  sv = scrollview(id_state, sv_x, sv_y, x_pad, pad_between, width, height, false);
+  svu.scrollview = sv;
+  stack->curr_y = stack->curr_y + (height + stack->pad_between);
+
+  return svu;
+}
+
+special_view_u vstack_add_scrollview_color(vstack_t* stack, int* id_state, int x_pad, int pad_between, int width, int height, color_t color) {
+  if (item_exceeds_stack_size(stack->width, stack->height, width, height, (stack->curr_y - stack->height))) {
+    printf("EXCEPTION: scroll view to big for vstack\n");
+    exit(1);
+  }
+
+  enum VALIGNMENT valignment = stack->valignment;
+  int sv_x, sv_y;
+  scrollview_t sv;
+  special_view_u svu;
+
+  sv_x = calculateVAlignment(stack->origin_x, stack->x_pad, stack->width, width, valignment);
+  sv_y = stack->origin_y + stack->curr_y;
+  sv = scrollview_color(id_state, sv_x, sv_y, x_pad, pad_between, width, height, false, color);
+  svu.scrollview = sv;
+  stack->curr_y = stack->curr_y + (height + stack->pad_between);
+
+  return svu;
 }
 
 hstack_t hstack(int ox, int oy, int pad_init, int y_pad, int pad_between, enum HALIGNMENT alignment) {

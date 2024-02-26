@@ -13,6 +13,22 @@ button_t button(SDL_Renderer* ren, int x, int y, int w, int h, int r, int g, int
   button.pressed = false;
   button.surface = TTF_RenderText_Solid(font, title, white);
   button.texture = SDL_CreateTextureFromSurface(ren, button.surface);
+  button.scrollview_tag = -1; // -1 will be the "null" code for this value
+
+  return button;
+}
+
+button_t tag_button(SDL_Renderer* ren, int x, int y, int w, int h, int r, int g, int b, char* title, TTF_Font* font, int tag) {
+  button_t button;
+  SDL_Color white = {255, 255, 255};
+
+  button.rect = sdlrect(x, y, w, h);
+  button.color = create_color(r, g, b);
+  button.title = title;
+  button.pressed = false;
+  button.surface = TTF_RenderText_Solid(font, title, white);
+  button.texture = SDL_CreateTextureFromSurface(ren, button.surface);
+  button.scrollview_tag = tag;
 
   return button;
 }

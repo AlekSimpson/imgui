@@ -182,5 +182,12 @@ CMakeFiles/imgui.dir/src/stack.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
  /home/alek/Desktop/projects/imgui/src/../include/../include/color.h \
  /home/alek/Desktop/projects/imgui/src/../include/../include/label.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/scrollview.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/button.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/scene.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/label.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/scrollview.h \
  /home/alek/Desktop/projects/imgui/src/../include/button.h \
- /home/alek/Desktop/projects/imgui/src/../include/color.h
+ /home/alek/Desktop/projects/imgui/src/../include/color.h \
+ /home/alek/Desktop/projects/imgui/src/../include/scrollview.h \
+ /home/alek/Desktop/projects/imgui/src/../include/button.h

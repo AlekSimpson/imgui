@@ -77,5 +77,9 @@ label_t label_black(SDL_Renderer* ren, TTF_Font* font, char* title, int x, int y
 }
 
 void render_label(SDL_Renderer* ren, label_t* lbl) {
+  if (ren == NULL || lbl == NULL) {
+    printf("label.c: 81: FAILED TO LOAD RENDERER OR LABEL");
+    exit(1);
+  }
   SDL_RenderCopy(ren, lbl->texture, NULL, &lbl->rect);
 }

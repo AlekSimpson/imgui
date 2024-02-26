@@ -1,8 +1,9 @@
-CMakeFiles/imgui.dir/src/scene.c.o: \
- /home/alek/Desktop/projects/imgui/src/scene.c /usr/include/stdc-predef.h \
- /home/alek/Desktop/projects/imgui/src/../include/scene.h \
- /home/alek/Desktop/projects/imgui/src/../include/label.h \
- /home/alek/Desktop/projects/imgui/src/../include/color.h \
+CMakeFiles/imgui.dir/src/scrollview.c.o: \
+ /home/alek/Desktop/projects/imgui/src/scrollview.c \
+ /usr/include/stdc-predef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /home/alek/Desktop/projects/imgui/src/../include/scrollview.h \
+ /home/alek/Desktop/projects/imgui/src/../include/button.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
@@ -178,7 +179,6 @@ CMakeFiles/imgui.dir/src/scene.c.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL.h \
+ /home/alek/Desktop/projects/imgui/src/../include/color.h \
  /home/alek/Desktop/projects/imgui/src/../include/button.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/alek/Desktop/projects/imgui/src/../include/scrollview.h \
- /home/alek/Desktop/projects/imgui/src/../include/scrollview.h
+ /home/alek/Desktop/projects/imgui/src/../include/color.h

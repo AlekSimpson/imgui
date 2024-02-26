@@ -185,9 +185,16 @@ CMakeFiles/imgui.dir/src/main.c.o: \
  /home/alek/Desktop/projects/imgui/src/../include/button.h \
  /home/alek/Desktop/projects/imgui/src/../include/label.h \
  /home/alek/Desktop/projects/imgui/src/../include/scene.h \
+ /home/alek/Desktop/projects/imgui/src/../include/scrollview.h \
  /home/alek/Desktop/projects/imgui/src/../include/label.h \
  /home/alek/Desktop/projects/imgui/src/../include/scene.h \
  /home/alek/Desktop/projects/imgui/src/../include/stack.h \
  /home/alek/Desktop/projects/imgui/src/../include/../include/button.h \
  /home/alek/Desktop/projects/imgui/src/../include/../include/color.h \
- /home/alek/Desktop/projects/imgui/src/../include/../include/label.h
+ /home/alek/Desktop/projects/imgui/src/../include/../include/label.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/scrollview.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/button.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/scene.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/label.h \
+ /home/alek/Desktop/projects/imgui/src/../include/../include/scrollview.h \
+ /home/alek/Desktop/projects/imgui/src/../include/scrollview.h

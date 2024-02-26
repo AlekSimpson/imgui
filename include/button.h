@@ -14,9 +14,11 @@ typedef struct {
   color_t color;
   char* title;
   bool pressed;
+  int scrollview_tag;
 } button_t;
 
 button_t button(SDL_Renderer*, int, int, int, int, int, int, int, char*, TTF_Font*);
+button_t tag_button(SDL_Renderer*, int, int, int, int, int, int, int, char*, TTF_Font*, int);
 void render_button(SDL_Renderer*, button_t*, TTF_Font*);
 bool button_was_pressed(button_t*);
 void button_process_event(button_t*, SDL_Event*);

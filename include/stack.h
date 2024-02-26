@@ -1,5 +1,7 @@
 #include "../include/button.h"
 #include "../include/label.h"
+#include "../include/scrollview.h"
+#include "../include/scene.h"
 
 #ifndef __VSTACK_H__
 #define __VSTACK_H__
@@ -45,6 +47,8 @@ button_t vstack_add_button(vstack_t*, SDL_Renderer*, int, int, int, int, int, ch
 hstack_t vstack_add_hstack(vstack_t*, int x_pad, int y_pad, int pad_between, int w, int h, enum HALIGNMENT alignment);
 vstack_t vstack_add_vstack(vstack_t*, int x_pad, int y_pad, int pad_between, int w, int h, enum VALIGNMENT alignment);
 label_t  vstack_add_label(vstack_t*, SDL_Renderer*, TTF_Font*, char*, int w, int h, int r, int g, int b);
+special_view_u vstack_add_scrollview(vstack_t* stack, int* id_state, int x_pad, int pad_between, int width, int height);
+special_view_u vstack_add_scrollview_color(vstack_t* stack, int* id_state, int x_pad, int pad_between, int width, int height, color_t color);
 
 int calculateVAlignment(int ox, int cx, int w, int item_w, enum VALIGNMENT valignment);
 int calculateHAlignment(int oy, int cy, int h, int item_h, enum HALIGNMENT halignment);

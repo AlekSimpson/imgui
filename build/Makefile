@@ -249,6 +249,30 @@ src/scene.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/scene.c.s
 .PHONY : src/scene.c.s
 
+src/scrollview.o: src/scrollview.c.o
+.PHONY : src/scrollview.o
+
+# target to build an object file
+src/scrollview.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/scrollview.c.o
+.PHONY : src/scrollview.c.o
+
+src/scrollview.i: src/scrollview.c.i
+.PHONY : src/scrollview.i
+
+# target to preprocess a source file
+src/scrollview.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/scrollview.c.i
+.PHONY : src/scrollview.c.i
+
+src/scrollview.s: src/scrollview.c.s
+.PHONY : src/scrollview.s
+
+# target to generate assembly for a file
+src/scrollview.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/src/scrollview.c.s
+.PHONY : src/scrollview.c.s
+
 src/stack.o: src/stack.c.o
 .PHONY : src/stack.o
 
@@ -297,6 +321,9 @@ help:
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"
+	@echo "... src/scrollview.o"
+	@echo "... src/scrollview.i"
+	@echo "... src/scrollview.s"
 	@echo "... src/stack.o"
 	@echo "... src/stack.i"
 	@echo "... src/stack.s"

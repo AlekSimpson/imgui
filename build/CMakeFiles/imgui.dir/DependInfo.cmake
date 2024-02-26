@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/alek/Desktop/projects/imgui/src/label.c" "CMakeFiles/imgui.dir/src/label.c.o" "gcc" "CMakeFiles/imgui.dir/src/label.c.o.d"
   "/home/alek/Desktop/projects/imgui/src/main.c" "CMakeFiles/imgui.dir/src/main.c.o" "gcc" "CMakeFiles/imgui.dir/src/main.c.o.d"
   "/home/alek/Desktop/projects/imgui/src/scene.c" "CMakeFiles/imgui.dir/src/scene.c.o" "gcc" "CMakeFiles/imgui.dir/src/scene.c.o.d"
+  "/home/alek/Desktop/projects/imgui/src/scrollview.c" "CMakeFiles/imgui.dir/src/scrollview.c.o" "gcc" "CMakeFiles/imgui.dir/src/scrollview.c.o.d"
   "/home/alek/Desktop/projects/imgui/src/stack.c" "CMakeFiles/imgui.dir/src/stack.c.o" "gcc" "CMakeFiles/imgui.dir/src/stack.c.o.d"
   )
 
