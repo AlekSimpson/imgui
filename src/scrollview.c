@@ -18,6 +18,8 @@ scrollview_t scrollview(int* id_state, int ox, int oy, int x_pad, int pad_betwee
   sv.scroll_y = 0;
   sv.x_pad = x_pad;
   sv.curr_y = oy + pad_between;
+  sv.max_height = sv.curr_y;
+  sv.min_height = oy + height - pad_between - 50;
   sv.pad_between = pad_between;
   sv.list_does_overflow = ldo;
   sv.is_active = false;
@@ -40,6 +42,8 @@ scrollview_t scrollview_color(int* id_state, int ox, int oy, int x_pad, int pad_
   sv.scroll_y = 0;
   sv.x_pad = x_pad;
   sv.curr_y = oy + pad_between;
+  sv.max_height = sv.curr_y;
+  sv.min_height = oy + height - pad_between - 50;
   sv.pad_between = pad_between;
   sv.list_does_overflow = ldo;
   sv.is_active = false;

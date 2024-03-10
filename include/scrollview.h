@@ -18,6 +18,8 @@ typedef struct {
 
   int x_pad;
   int pad_between; // scroll views do not have initial padding unlike stacks
+  int max_height;
+  int min_height;
 
   int scroll_y;
   int curr_y;
